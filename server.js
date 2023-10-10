@@ -1,16 +1,16 @@
-const express = require('express')
+const express = require('express');
 const axios = require('axios');
-const cors = require('cors')
+const cors = require('cors');
+const path = require('path'); 
 
 const app = express();
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000; 
 
 app.use(cors({
     origin: '*',
     methods: 'GET',
-  }));
-  
+}));
 
   app.get('/country', async (req, res) => {
     const country = req.query.country;
@@ -57,8 +57,17 @@ app.use(cors({
     }
 });
 
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('BOUNCEAPP/dist'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+    });
+}
+
 
 
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
-  });
+});
