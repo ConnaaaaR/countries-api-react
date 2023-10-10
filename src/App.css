@@ -1,0 +1,54 @@
+@import url(./fonts.css);
+
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	overflow: hidden;
+	text-align: center;
+}
+
+.countrys-grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.country-search-button {
+	background-color: #1a1a1a;
+}
+
+.search-form {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.search-form > input {
+	flex: 1 1 0;
+	background-color: #e3e3e384;
+	border: 1px solid #e3e3e3;
+	font-family: Lexend-Deca;
+	font-weight: 500;
+	font-size: 2rem;
+	color: #1a1a1a;
+	height: 2.5rem;
+	border-radius: 8px;
+}
+.search-form > input:focus {
+	background-color: #e3e3e3;
+	border: 2px solid #1a1a1a;
+	font-weight: 500;
+	outline: none;
+	color: #1a1a1a;
+	height: 2.5rem;
+}
+.search-form > input :focus-visible {
+	outline: none;
+}
+
+@media screen and (max-width: 660px) {
+	.search-form {
+		flex-direction: column;
+	}
+}
