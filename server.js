@@ -8,9 +8,18 @@ const app = express();
 
 const PORT = process.env.PORT || 8000; 
 
+const allowedOrigins = ['https://countries-react-app-41e6305a2b31.herokuapp.com']
 app.use(cors({
-    origin: 'https://countries-react-app-41e6305a2b31.herokuapp.com/',
-    methods: 'GET',
+    origin: function(origin, callback){
+        if (!origin) return callback(null,true);
+        if(allowedOrigins.indexOf(origin) === -1){
+            const msg = 'CORS policy for this site does not allow access from the specified origin';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true)
+    }
+    
+
 }));
 
   app.get('/country', async (req, res) => {
