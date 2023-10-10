@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 8000; 
 
 app.use(cors({
-    origin: '*',
+    origin: 'https://countries-react-app-41e6305a2b31.herokuapp.com/',
     methods: 'GET',
 }));
 
