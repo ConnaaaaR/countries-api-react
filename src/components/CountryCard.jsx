@@ -7,8 +7,14 @@ const CountryCard = ({ data }) => {
 			<div className="box">
 				<h2>{data.name.official}</h2>
 				<img src={data.flags.png} alt={`Flag of ${data.name.common}`} />
-				<p>{data.name.common}</p>
-				<h3>{data.flag}</h3>
+				<p>
+					<b>Population: </b>
+					{data.population}
+				</p>
+				<p>
+					<b>Capital: </b>
+					{data.capital}
+				</p>
 			</div>
 		</Link>
 	);
@@ -24,7 +30,6 @@ CountryCard.propTypes = {
 		flags: PropTypes.shape({
 			png: PropTypes.string.isRequired,
 		}).isRequired,
-		flag: PropTypes.string,
 	}).isRequired,
 };
 

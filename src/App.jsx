@@ -28,7 +28,8 @@ function App() {
 
 	return (
 		<>
-			<h1>Countries API Search</h1>
+			<h1>Countries Search</h1>
+			<h5>Find out more about your favourite countries</h5>
 			<Form fetchData={fetchData} setCountry={setCountry} />
 
 			<Routes>

@@ -8,10 +8,38 @@
 	text-align: center;
 }
 
+.box {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+
+	padding: 0 1rem;
+}
+
+.box img {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+}
+.details-container {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.flag-image {
+	width: 200px;
+	height: auto;
+}
+
 .countrys-grid-container {
+	/* margin-top: 10px;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .country-search-button {
@@ -21,7 +49,6 @@
 .search-form {
 	display: flex;
 	gap: 10px;
-	align-items: center;
 }
 
 .search-form > input {
@@ -47,8 +74,18 @@
 	outline: none;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 880px) {
 	.search-form {
 		flex-direction: column;
+	}
+
+	.countrys-grid-container {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.box img {
+		max-width: 90%; /* On smaller screens, allow the image to take up more width */
 	}
 }

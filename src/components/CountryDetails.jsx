@@ -6,6 +6,15 @@ const CountryDetails = () => {
 
 	const [countryData, setCountryData] = useState(null);
 
+	const currencyParser = () => {
+		if (countryData) {
+			// the name of the currency child object changes based on the country so keys must be used here...
+			const currencyKey = Object.keys(countryData.currencies)[0];
+			const currencyName = countryData.currencies[currencyKey].name;
+			return currencyName;
+		}
+	};
+
 	useEffect(() => {
 		async function fetchCountryDetails() {
 			try {
@@ -25,14 +34,21 @@ const CountryDetails = () => {
 	return (
 		<div>
 			{countryData && (
-				<div>
-					<h2>{countryData.name.official}</h2>
+				<div className="details-container">
 					<img
+						className="flag-image"
 						src={countryData.flags.png}
 						alt={`Flag of ${countryData.name.common}`}
 					/>
-					<p>{countryData.name.common}</p>
-					<h3>{countryData.flag}</h3>
+					<div className="flex-item">
+						<h2>{countryData.name.official}</h2>
+						<h3>Capital: {countryData.capital}</h3>
+						<h4>Currency: {currencyParser()}</h4>
+						<p>
+							Population:{" "}
+							{new Intl.NumberFormat().format(countryData.population)}
+						</p>
+					</div>
 				</div>
 			)}
 		</div>
