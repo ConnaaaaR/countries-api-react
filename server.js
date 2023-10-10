@@ -8,7 +8,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8000; 
 
-const allowedOrigins = ['https://countries-react-app-41e6305a2b31.herokuapp.com']
+const allowedOrigins = ['https://countries-react-app-41e6305a2b31.herokuapp.com', 'localhost:']
 app.use(cors({
     origin: function(origin, callback){
         if (!origin) return callback(null,true);
