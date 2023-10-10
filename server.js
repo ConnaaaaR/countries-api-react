@@ -1,3 +1,4 @@
+/* eslint-env node */
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -59,7 +60,7 @@ app.use(cors({
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('/dist'));
+    app.use(express.static(__dirname + '/dist'));
 
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));

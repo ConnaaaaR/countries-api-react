@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const CountryCard = ({ data }) => {
 	return (
@@ -12,4 +13,19 @@ const CountryCard = ({ data }) => {
 		</Link>
 	);
 };
+
+// define the prop types for the data and its children
+CountryCard.propTypes = {
+	data: PropTypes.shape({
+		name: PropTypes.shape({
+			common: PropTypes.string.isRequired,
+			official: PropTypes.string.isRequired,
+		}).isRequired,
+		flags: PropTypes.shape({
+			png: PropTypes.string.isRequired,
+		}).isRequired,
+		flag: PropTypes.string,
+	}).isRequired,
+};
+
 export default CountryCard;

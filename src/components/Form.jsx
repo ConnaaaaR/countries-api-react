@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, memo } from "react";
+import PropTypes from "prop-types";
 
 const Form = ({ fetchData, setCountry }) => {
 	const clickHandler = (e) => {
@@ -24,4 +23,9 @@ const Form = ({ fetchData, setCountry }) => {
 	);
 };
 
-export default memo(Form);
+Form.propTypes = {
+	fetchData: PropTypes.func.isRequired,
+	setCountry: PropTypes.func.isRequired,
+};
+
+export default Form;
