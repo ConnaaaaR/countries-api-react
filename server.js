@@ -67,6 +67,10 @@ app.use(cors({
     }
 });
 
+app.get('/api/config', (req,res) => {
+    res.json({port: PORT})
+})
+
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/dist'));

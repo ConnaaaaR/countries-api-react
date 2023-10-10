@@ -14,8 +14,9 @@ function App() {
 
 	async function fetchData() {
 		try {
+			const port = process.env.port;
 			const response = await fetch(
-				`http://localhost:8000/country?country=${country}`
+				`https://countries-react-app-41e6305a2b31.herokuapp.com:${port}/country?country=${country}`
 			);
 			const countryData = await response.json();
 			setData(countryData);
