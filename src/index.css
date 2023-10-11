@@ -21,6 +21,12 @@
 	--Secondary: #1a1a1a;
 }
 
+body {
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 4rem;
+}
+
 p {
 	margin: 0;
 }

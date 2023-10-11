@@ -139,6 +139,16 @@
 	height: 20px;
 }
 
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 1rem 0;
+	font-size: 0.9rem;
+}
+
 @media screen and (max-width: 880px) {
 	.search-form {
 		flex-direction: column;

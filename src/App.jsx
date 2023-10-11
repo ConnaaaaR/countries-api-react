@@ -53,6 +53,10 @@ function App() {
 				/>
 				<Route path="/country/:countryName" element={<CountryDetails />} />
 			</Routes>
+			<footer className="footer">
+				Made with <span style={{ color: "red" }}>&hearts;</span> by Connor
+				Mattless
+			</footer>
 		</>
 	);
 }
