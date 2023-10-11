@@ -29,9 +29,8 @@ const CountryDetails = () => {
 	useEffect(() => {
 		async function fetchCountryDetails() {
 			try {
-				const port = process.env.port;
 				const response = await fetch(
-					`https://countries-react-app-41e6305a2b31.herokuapp.com:${port}/countryFull?country=${countryName}`
+					`https://countries-react-app-41e6305a2b31.herokuapp.com:8000/countryFull?country=${countryName}`
 				);
 				const data = await response.json();
 				setCountryData(data[0]); // assuming the API returns an array
