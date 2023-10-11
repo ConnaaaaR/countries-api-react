@@ -4,7 +4,7 @@
 :root {
 	--Primary: #e3e3e3;
 	--Secondary: #1a1a1a;
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: DM-Sans, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 	color-scheme: light dark;
@@ -29,13 +29,15 @@ body {
 }
 
 p,
+h2,
+h3,
+h4,
 h5 {
 	margin: 0;
 }
 
 h1 {
 	margin: 0.5rem 0;
-	font-family: DM-Sans;
 	font-weight: 700;
 	color: var(--Secondary);
 	font-size: 3.2em;
@@ -43,7 +45,9 @@ h1 {
 }
 
 h5 {
-	margin-bottom: 1rem;
+	border-top: 1px solid #1a1a1a;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
 	color: var(--Secondary);
 }
 
@@ -51,10 +55,6 @@ h5 {
 a {
 	font-weight: 500;
 	color: var(--Secondary);
-	text-decoration: inherit;
-	border: 3px solid transparent;
-	border-radius: 8px;
-	padding: 1rem;
 }
 
 /* Button Styles */

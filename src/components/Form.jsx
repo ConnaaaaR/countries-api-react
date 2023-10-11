@@ -14,7 +14,7 @@ const Form = ({ fetchData, setCountry }) => {
 						<input
 							className="search-form-text"
 							type="text"
-							id="country"
+							autoComplete="false"
 							name="country"
 							onChange={(e) => setCountry(e.target.value)}
 						/>

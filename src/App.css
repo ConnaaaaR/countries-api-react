@@ -32,11 +32,9 @@
 .search-form-text {
 	background-color: var(--Primary);
 	border: 1px solid var(--Secondary);
-	font-family: Lexend-Deca;
 	font-weight: 500;
-	font-size: 2rem;
-	min-width: 335px;
-	max-width: 80vw;
+	font-size: 1.5rem;
+	width: 100%;
 	color: var(--Secondary);
 	height: 2.5rem;
 	border-radius: 8px;
@@ -128,6 +126,15 @@
 	transition: transform 0.2s, box-shadow 0.2s;
 	max-width: 400px;
 	margin: 3rem auto;
+}
+
+.details-header-info-container {
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.detailed-info-container {
+	text-align: left;
 }
 
 .flag-image {
