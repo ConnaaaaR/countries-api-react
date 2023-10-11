@@ -42,7 +42,7 @@
 
 .search-form-text:focus {
 	background-color: var(--Primary);
-	border: 2px solid var(--Secondary);
+	outline: 1px solid var(--Secondary);
 	font-weight: 500;
 	outline: none;
 	color: var(--Secondary);
