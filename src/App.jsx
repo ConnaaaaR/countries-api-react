@@ -31,8 +31,10 @@ function App() {
 
 	return (
 		<>
-			<h1>Countries Search</h1>
-			<h5>Find out more about your favourite countries</h5>
+			<a href="/">
+				<img src="/gis_earth-north-o.svg" alt="Icon of the earth" />
+			</a>
+			<h1>WhatInTheWorld?!</h1>
 			<Form fetchData={fetchData} setCountry={setCountry} />
 
 			<Routes>

@@ -1,11 +1,22 @@
 @import url(./fonts.css);
 
+:root {
+	/* Vars */
+	--Primary: #e3e3e3;
+	--Secondary: #1a1a1a;
+}
+
 #root {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem;
 	overflow: hidden;
 	text-align: center;
+}
+
+.form-container {
+	display: flex;
+	justify-content: center;
 }
 
 .box {
@@ -24,13 +35,22 @@
 .details-container {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	flex-wrap: wrap;
 	gap: 20px;
+	padding: 20px;
+
+	border-radius: 8px; /* Rounded corners */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+	max-width: 400px; /* Optional: Set a max width for the card */
+	margin: 3rem auto; /* Center the card if its parent is a block container */
 }
 
 .flag-image {
 	width: 200px;
 	height: auto;
+	margin: 10px auto;
 }
 
 .countrys-grid-container {
@@ -44,35 +64,61 @@
 }
 
 .country-search-button {
-	background-color: #1a1a1a;
+	background-color: var(--Primary);
 }
 
 .search-form {
 	display: flex;
+	align-items: center;
+	max-width: 430px;
+	flex-direction: column;
+	justify-content: center;
 	gap: 10px;
 }
 
-.search-form > input {
+.search-form-text {
 	flex: 1 1 0;
-	background-color: #e3e3e384;
-	border: 1px solid #e3e3e3;
+	background-color: var(--Primary);
+	border: 1px solid var(--Secondary);
 	font-family: Lexend-Deca;
 	font-weight: 500;
 	font-size: 2rem;
-	color: #1a1a1a;
+	max-width: 80vw;
+	color: var(--Secondary);
 	height: 2.5rem;
 	border-radius: 8px;
 }
-.search-form > input:focus {
-	background-color: #e3e3e3;
-	border: 2px solid #1a1a1a;
+.search-form-text :focus {
+	background-color: var(--Primary);
+	border: 2px solid var(--Secondary);
 	font-weight: 500;
 	outline: none;
-	color: #1a1a1a;
+	color: var(--Secondary);
 	height: 2.5rem;
 }
 .search-form > input :focus-visible {
 	outline: none;
+}
+.input-container {
+	position: relative;
+	display: inline-block;
+	max-width: 430px;
+}
+
+.under-text {
+	margin-top: 1px;
+	/* margin-left: 25px; */
+	text-align: left;
+	align-self: baseline;
+}
+
+.input-icon {
+	position: absolute;
+	top: 50%;
+	right: 25px;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
 }
 
 @media screen and (max-width: 880px) {
@@ -87,6 +133,6 @@
 	}
 
 	.box img {
-		max-width: 90%; /* On smaller screens, allow the image to take up more width */
+		max-width: 90%;
 	}
 }
