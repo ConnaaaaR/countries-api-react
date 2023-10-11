@@ -1,54 +1,36 @@
 @import url(./fonts.css);
+
+/* Variables */
 :root {
+	--Primary: #e3e3e3;
+	--Secondary: #1a1a1a;
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
-
 	color-scheme: light dark;
 	color: var(--Secondary);
 	background: var(--Primary);
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
-
-	/* Vars */
-
-	/* Vars */
-	--Primary: #e3e3e3;
-	--Secondary: #1a1a1a;
 }
 
+/* Base Styles */
 body {
 	position: relative;
 	min-height: 100vh;
 	padding-bottom: 4rem;
-}
-
-p {
-	margin: 0;
-}
-
-a {
-	font-weight: 500;
-	color: var(--Secondary);
-	text-decoration: inherit;
-	border: 3px solid transparent;
-	border-radius: 8px;
-	padding: 1rem;
-}
-a:hover {
-	/* border: 3px solid var(--Secondary); */
-}
-
-body {
 	margin: 0;
 	display: flex;
 	place-items: center;
 	min-width: 320px;
-	min-height: 100vh;
+}
+
+p,
+h5 {
+	margin: 0;
 }
 
 h1 {
@@ -61,35 +43,46 @@ h1 {
 }
 
 h5 {
-	margin: 0 0 1rem;
+	margin-bottom: 1rem;
 	color: var(--Secondary);
 }
 
+/* Link Styles */
+a {
+	font-weight: 500;
+	color: var(--Secondary);
+	text-decoration: inherit;
+	border: 3px solid transparent;
+	border-radius: 8px;
+	padding: 1rem;
+}
+
+/* Button Styles */
 button {
 	border-radius: 8px;
-
 	border: 2px solid var(--Secondary);
 	color: var(--Secondary);
 	background-color: var(--Primary);
-
 	padding: 0.6em 1.2em;
 	font-size: 1em;
 	font-weight: 700;
 	font-family: inherit;
-
 	cursor: pointer;
 	transition: border-color 0.25s;
 }
+
 button:hover {
 	color: var(--Primary);
 	background-color: var(--Secondary);
 	border-color: var(--Secondary);
 }
+
 button:focus,
 button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Media Queries */
 @media screen and (max-width: 880px) {
 	h1 {
 		font-size: 2rem;

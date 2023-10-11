@@ -1,7 +1,7 @@
 @import url(./fonts.css);
 
+/* Variables */
 :root {
-	/* Vars */
 	--Primary: #e3e3e3;
 	--Secondary: #1a1a1a;
 }
@@ -14,76 +14,10 @@
 	text-align: center;
 }
 
+/* Form Styles */
 .form-container {
 	display: flex;
 	justify-content: center;
-}
-
-.box {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	padding: 0 1rem;
-	border-radius: 8px;
-}
-
-.box img {
-	width: 100%;
-	max-width: 300px;
-
-	height: 150px;
-	object-fit: cover;
-}
-
-.box h3 {
-	display: flex;
-	align-items: center; /* Vertically centers the text within the fixed height */
-	justify-content: center; /* Horizontally centers the text */
-	height: 60px;
-	overflow: hidden;
-}
-
-.box:hover {
-	transform: scale(1.05); /* Slightly scale up */
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
-}
-
-.details-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 20px;
-	padding: 20px;
-
-	border-radius: 8px; /* Rounded corners */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-	transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
-	max-width: 400px; /* Optional: Set a max width for the card */
-	margin: 3rem auto; /* Center the card if its parent is a block container */
-}
-
-.flag-image {
-	width: 200px;
-	height: auto;
-	margin: 10px auto;
-}
-
-.countrys-grid-container {
-	/* margin-top: 10px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 10px; */
-	display: grid;
-	align-items: stretch;
-	grid-auto-flow: row dense;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 1em 1em;
-}
-
-.country-search-button {
-	background-color: var(--Primary);
 }
 
 .search-form {
@@ -101,12 +35,14 @@
 	font-family: Lexend-Deca;
 	font-weight: 500;
 	font-size: 2rem;
+	min-width: 30vw;
 	max-width: 80vw;
 	color: var(--Secondary);
 	height: 2.5rem;
 	border-radius: 8px;
 }
-.search-form-text :focus {
+
+.search-form-text:focus {
 	background-color: var(--Primary);
 	border: 2px solid var(--Secondary);
 	font-weight: 500;
@@ -114,20 +50,15 @@
 	color: var(--Secondary);
 	height: 2.5rem;
 }
-.search-form > input :focus-visible {
+
+.search-form > input:focus-visible {
 	outline: none;
 }
+
 .input-container {
 	position: relative;
 	display: inline-block;
 	max-width: 430px;
-}
-
-.under-text {
-	margin-top: 1px;
-	/* margin-left: 25px; */
-	text-align: left;
-	align-self: baseline;
 }
 
 .input-icon {
@@ -139,6 +70,73 @@
 	height: 20px;
 }
 
+.under-text {
+	margin-top: 1px;
+	text-align: left;
+	align-self: baseline;
+}
+
+/* Box Styles */
+.box {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	padding: 0 1rem;
+	border-radius: 8px;
+}
+
+.box img {
+	width: 100%;
+	max-width: 300px;
+	height: 150px;
+	object-fit: cover;
+}
+
+.box h3 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	overflow: hidden;
+}
+
+.box:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid Styles */
+.countrys-grid-container {
+	display: grid;
+	align-items: stretch;
+	grid-auto-flow: row dense;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1em 1em;
+}
+
+/* Details Container */
+.details-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+	max-width: 400px;
+	margin: 3rem auto;
+}
+
+.flag-image {
+	width: 200px;
+	height: auto;
+	margin: 10px auto;
+}
+
+/* Footer Styles */
 .footer {
 	position: absolute;
 	bottom: 60px;
@@ -149,6 +147,7 @@
 	font-size: 0.9rem;
 }
 
+/* Media Queries */
 @media screen and (max-width: 880px) {
 	.search-form {
 		flex-direction: column;

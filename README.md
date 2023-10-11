@@ -1,54 +1,76 @@
-# Countries API Search
+# WhatInTheWorld?!
 
-A web application that allows users to search for countries and view detailed information about them. The frontend is built using React, and it communicates with an ExpressJS backend to fetch data from the RESTcountries API.
+Discover information about countries around the world with this simple React application. Search for a country, view its details, and explore its flag. Check out the live project [here](https://countries-react-app-41e6305a2b31.herokuapp.com/)!
 
 ## Features
 
-- **Search Bar**: Users can input the name of a country and get a list of matching results.
-- **Country List**: Displays a list of countries based on the search query.
-- **Country Details**: Clicking on a country from the list navigates to a detailed view of that country.
+- **Search for Countries**: Simply type the name of a country and press enter.
+- **Country Details**: Click on a country card to view more detailed information about the country.
+- **Responsive Design**: Works on both desktop and mobile devices.
 
-## Installation
+## Setup
 
-### From GitHub:
+### From Git
 
-1. Clone the repository:
+1. **Clone the Repository**
+
 ```bash
 git clone https://github.com/ConnaaaaR/countries-api-react.git
-```
-
-2. Navigate to the project directory:
-```bash
 cd countries-api-react
 ```
 
-### From Zip File:
+2. **Install Dependencies**
 
-1. Extract the zip file to your desired location.
-2. Navigate to the extracted project directory using the terminal or command prompt.
-
-### Common Setup:
-
-1. Install the required dependencies:
 ```bash
 npm install
 ```
 
-2. Start the development server:
+3. **Setup Environment Variables**
+
+Copy the `.env.template` file provided in the repository to the root directory. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
+
+```bash
+cp .env.example .env
+```
+
+4. **Run the Application**
+
 ```bash
 npm start
 ```
 
-## Usage
+### From a ZIP File
 
-1. Open the application in your browser, typically at `http://localhost:3000`.
-2. Use the search bar to input a country name.
-3. View the list of matching countries.
-4. Click on a country to view detailed information about it.
+1. **Extract the ZIP File**
 
-## Dependencies
+Unzip the downloaded file to a directory of your choice.
 
-- React
-- React Router v6
-- ExpressJS (for the backend)
+2. **Navigate to the Directory**
+
+Open your terminal or command prompt and navigate to the directory.
+
+```bash
+cd [YOUR DIRECTORY PATH]
+```
+
+3. **Install Dependencies**
+
+```bash
+npm install
+```
+
+4. **Setup Environment Variables**
+
+Copy the `.env` file provided in the directory. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
+
+5. **Run the Application**
+
+```bash
+npm start
+```
+
+## Using the `.env` File
+
+The `.env` file contains environment-specific variables. The most important variable for this project is `VITE_BACKEND_URL`, which should point to your backend server. Make sure this URL is correct for your environment.
+
 
