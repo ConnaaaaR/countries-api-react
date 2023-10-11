@@ -30,7 +30,7 @@ const CountryDetails = () => {
 		async function fetchCountryDetails() {
 			try {
 				const response = await fetch(
-					`https://countries-react-app-41e6305a2b31.herokuapp.com:8000/countryFull?country=${countryName}`
+					`https://countries-react-app-41e6305a2b31.herokuapp.com/countryFull?country=${countryName}`
 				);
 				const data = await response.json();
 				setCountryData(data[0]); // assuming the API returns an array

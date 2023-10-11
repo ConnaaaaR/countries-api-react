@@ -19,7 +19,7 @@ app.use(cors());
 //         return callback(null, true)
 //     }
 // }
-  app.get('/country', async (req, res) => {
+  app.get('/findCountry', async (req, res) => {
     const country = req.query.country;
 
     // Validate the country input
