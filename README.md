@@ -50,11 +50,10 @@ Unzip the downloaded file to a directory of your choice.
 Open your terminal or command prompt and navigate to the directory.
 
 ```bash
-cd [YOUR DIRECTORY PATH]
+cd [PATH TO EXTRACTED PROJECT]
 ```
 
 3. **Install Dependencies**
-
 ```bash
 npm install
 ```
@@ -62,6 +61,9 @@ npm install
 4. **Setup Environment Variables**
 
 Copy the `.env` file provided in the directory. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
+```bash
+cp .env.example .env
+```
 
 5. **Run the Application**
 
@@ -71,6 +73,6 @@ npm start
 
 ## Using the `.env` File
 
-The `.env` file contains environment-specific variables. The most important variable for this project is `VITE_BACKEND_URL`, which should point to your backend server. Make sure this URL is correct for your environment.
+The `.env` file contains the `VITE_BACKEND_URL`. This variable defines the server URL for the application. Without the correct setup of this variable the application will be unable to retrieve data from the API.
 
 
