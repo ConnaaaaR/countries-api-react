@@ -13,16 +13,19 @@ function App() {
 	const navigate = useNavigate();
 
 	async function fetchData() {
+		const backendURL = import.meta.env.VITE_BACKEND_URL;
+		console.log(backendURL);
 		try {
 			const response = await fetch(
-				`https://countries-react-app-41e6305a2b31.herokuapp.com/findCountry?country=${country}`
+				`${backendURL}findCountry?country=${country}`
 			);
 			const countryData = await response.json();
 			setData(countryData);
 
 			navigate(`/`);
 		} catch (err) {
-			setError("Error Returning country");
+			console.error(err);
+			setError("Error Returning country, check console. ");
 		}
 	}
 

@@ -15,22 +15,12 @@ const CountryDetails = () => {
 		}
 	};
 
-	async function fetchPort() {
-		try {
-			const response = await fetch("/api/config");
-			const data = await response.json();
-			console.log("Backend is running on port:", data.port);
-			return data.port;
-		} catch (error) {
-			console.error("Error fetching the port:", error);
-		}
-	}
-
 	useEffect(() => {
 		async function fetchCountryDetails() {
+			const backendURL = import.meta.env.VITE_BACKEND_URL;
 			try {
 				const response = await fetch(
-					`https://countries-react-app-41e6305a2b31.herokuapp.com/countryFull?country=${countryName}`
+					`${backendURL}countryFull?country=${countryName}`
 				);
 				const data = await response.json();
 				setCountryData(data[0]); // assuming the API returns an array
