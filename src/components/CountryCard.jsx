@@ -5,7 +5,7 @@ const CountryCard = ({ data }) => {
 	return (
 		<Link to={`/country/${data.name.common}`}>
 			<div className="box">
-				<h2>{data.name.official}</h2>
+				<h3>{data.name.official}</h3>
 				<img src={data.flags.png} alt={`Flag of ${data.name.common}`} />
 				<p>
 					<b>Population: </b>

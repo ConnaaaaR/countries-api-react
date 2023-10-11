@@ -21,6 +21,10 @@
 	--Secondary: #1a1a1a;
 }
 
+p {
+	margin: 0;
+}
+
 a {
 	font-weight: 500;
 	color: var(--Secondary);

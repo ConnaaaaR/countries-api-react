@@ -22,16 +22,33 @@
 .box {
 	display: flex;
 	flex-direction: column;
-	align-items: left;
-
+	align-items: flex-start;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	padding: 0 1rem;
+	border-radius: 8px;
 }
 
 .box img {
 	width: 100%;
 	max-width: 300px;
-	height: auto;
+
+	height: 150px;
+	object-fit: cover;
 }
+
+.box h3 {
+	display: flex;
+	align-items: center; /* Vertically centers the text within the fixed height */
+	justify-content: center; /* Horizontally centers the text */
+	height: 60px;
+	overflow: hidden;
+}
+
+.box:hover {
+	transform: scale(1.05); /* Slightly scale up */
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
 .details-container {
 	display: flex;
 	align-items: center;
@@ -58,9 +75,14 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px; */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	display: grid;
+	align-items: stretch;
+	grid-auto-flow: row dense;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1em 1em;
+}
+
+.countrys-grid-container > a:hover {
 }
 
 .country-search-button {
@@ -128,6 +150,7 @@
 
 	.countrys-grid-container {
 		display: flex;
+		align-items: stretch;
 		flex-direction: column;
 		gap: 10px;
 	}
