@@ -14,7 +14,6 @@ function App() {
 
 	async function fetchData() {
 		const backendURL = import.meta.env.VITE_BACKEND_URL;
-		console.log(backendURL);
 		try {
 			const response = await fetch(
 				`${backendURL}findCountry?country=${country}`

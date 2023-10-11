@@ -17,8 +17,16 @@ const CountryDetails = () => {
 	};
 
 	const languageParser = () => {
+		let langCap = 5; // sets highest amount of displayed langauges
 		let languages = Object.values(countryData.languages);
-		return languages.toString();
+		if (languages.length > 5) {
+			let len = languages.length;
+			// console.log(languages);
+			languages = languages.splice(0, langCap);
+			return `${languages.toString()} and ${len} more...`;
+		} else {
+			return languages.toString();
+		}
 	};
 
 	useEffect(() => {
