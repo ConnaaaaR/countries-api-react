@@ -1,0 +1,92 @@
+@import url(./fonts.css);
+
+/* Variables */
+:root {
+	/* --Primary: #e3e3e3;
+	--Secondary: #1a1a1a; */
+
+	--Primary: #090d2d;
+	--Secondary: #e3e3e3;
+	font-family: DM-Sans, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	color-scheme: light dark;
+	color: var(--Secondary);
+	background: var(--Primary);
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Base Styles */
+body {
+	position: relative;
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+}
+
+p,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+}
+
+h1 {
+	margin: 0.5rem 1rem 2.5rem;
+	font-weight: 700;
+	color: var(--Secondary);
+	font-size: 3.2em;
+	line-height: 1.1;
+}
+
+h5 {
+	border-top: 1px solid #1a1a1a;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	color: var(--Secondary);
+}
+
+/* Link Styles */
+a {
+	font-weight: 500;
+	color: var(--Secondary);
+}
+
+/* Button Styles */
+button {
+	border-radius: 8px;
+	border: 2px solid var(--Secondary);
+	color: var(--Secondary);
+	background-color: var(--Primary);
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 700;
+	font-family: inherit;
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+
+button:hover {
+	color: var(--Primary);
+	background-color: var(--Secondary);
+	border-color: var(--Secondary);
+}
+
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Media Queries */
+@media screen and (max-width: 880px) {
+	h1 {
+		font-size: 2rem;
+	}
+}
