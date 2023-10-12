@@ -27,7 +27,7 @@ npm install
 
 3. **Setup Environment Variables**
 
-Copy the `.env.template` file provided in the repository to the root directory. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
+Copy the `.env.template` file provided in the frontend directory. Rename the copy file to `.env` or use the bash command provided to copy the file. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
 
 ```bash
 cp .env.example .env
@@ -50,7 +50,7 @@ Unzip the downloaded file to a directory of your choice.
 Open your terminal or command prompt and navigate to the directory.
 
 ```bash
-cd [PATH TO EXTRACTED PROJECT]
+cd <PATH TO EXTRACTED PROJECT>
 ```
 
 3. **Install Dependencies**
@@ -60,7 +60,7 @@ npm install
 
 4. **Setup Environment Variables**
 
-Copy the `.env` file provided in the directory. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
+Copy the `.env.template` file provided in the frontend directory. Rename the copy file to `.env` or use the bash command provided to copy the file. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
 ```bash
 cp .env.example .env
 ```

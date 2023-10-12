@@ -8,18 +8,10 @@ const app = express();
 
 const PORT = process.env.PORT || 8000; 
 
-const allowedOrigins = ['https://countries-react-app-41e6305a2b31.herokuapp.com', 'localhost:']
 app.use(cors());
-//     origin: function(origin, callback){
-//         if (!origin) return callback(null,true);
-//         if(allowedOrigins.indexOf(origin) === -1){
-//             const msg = 'CORS policy for this site does not allow access from the specified origin';
-//             return callback(new Error(msg), false);
-//         }
-//         return callback(null, true)
-//     }
-// }
-  app.get('/findCountry', async (req, res) => {
+
+
+app.get('/findCountry', async (req, res) => {
     const country = req.query.country;
 
     // Validate the country input
