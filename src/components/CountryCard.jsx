@@ -5,16 +5,16 @@ const CountryCard = ({ data }) => {
 	return (
 		<Link to={`/country/${data.name.common}`}>
 			<div className="box">
-				<h3>{data.name.official}</h3>
 				<img src={data.flags.png} alt={`Flag of ${data.name.common}`} />
-				<p>
+				<h3>{data.name.official}</h3>
+				{/* <p>
 					<b>Population: </b>
 					{data.population}
 				</p>
 				<p>
 					<b>Capital: </b>
 					{data.capital}
-				</p>
+				</p> */}
 			</div>
 		</Link>
 	);

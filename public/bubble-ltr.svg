@@ -1,0 +1,11 @@
+<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ooui:speech-bubble-rtl" clip-path="url(#clip0_24_22)">
+<path id="Vector" d="M14 14H20V20L14 14Z" fill="#fffce8"/>
+<path id="Vector_2" d="M18 0H2C0.89543 0 0 0.89543 0 2V14C0 15.1046 0.89543 16 2 16H18C19.1046 16 20 15.1046 20 14V2C20 0.89543 19.1046 0 18 0Z" fill="#fffce8"/>
+</g>
+<defs>
+<clipPath id="clip0_24_22">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>

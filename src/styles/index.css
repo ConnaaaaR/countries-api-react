@@ -5,8 +5,8 @@
 	/* --Primary: #e3e3e3;
 	--Secondary: #1a1a1a; */
 
-	--Primary: #090d2d;
-	--Secondary: #e3e3e3;
+	--Primary: #16151f;
+	--Secondary: #fffce8;
 	font-family: DM-Sans, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
@@ -57,6 +57,7 @@ h5 {
 a {
 	font-weight: 500;
 	color: var(--Secondary);
+	text-decoration: none;
 }
 
 /* Button Styles */
