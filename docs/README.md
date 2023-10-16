@@ -2,7 +2,7 @@
 
 Discover information about countries around the world with this simple React application. Search for a country, view its details, and explore its flag. Check out the live project [here](https://countries-react-app-41e6305a2b31.herokuapp.com/)!
 
-![image of website](image.png)
+![image of website](/docs/app_screenshot.png)
 
 ## Features
 
@@ -29,7 +29,9 @@ npm install
 
 3. **Setup Environment Variables**
 
-Copy the `.env.template` file provided in the frontend directory. Rename the copy file to `.env` or use the bash command provided to copy the file. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
+Copy the `.env.template` file provided in the frontend directory. Rename the copy file to `.env` or use the bash command provided to copy the file. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL. This is typically `http://localhost:8000/`.
+
+if changing the port be sure to include the trailing `/` in the url. 
 
 ```bash
 cp .env.example .env
@@ -59,19 +61,26 @@ cd <PATH TO EXTRACTED PROJECT>
 ```bash
 npm install
 ```
-
 4. **Setup Environment Variables**
-
-Copy the `.env.template` file provided in the frontend directory. Rename the copy file to `.env` or use the bash command provided to copy the file. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL.
-```bash
-cp .env.example .env
-```
+   
+Edit the `.env` file provided in the frontend directory of the project. Set the `VITE_BACKEND_URL` to the backend server URL. This is typically `http://localhost:8000/` and this is set as default. The port can be seen in the server.js output log if the server is running on a different port.
 
 5. **Run the Application**
+   
+Run each of the following commands in a separate terminal: 
 
 ```bash
-npm start
+npm run dev
 ```
+
+```bash
+npm run backend
+```
+
+6. **Open the Application**
+
+Command/CTRL-Click the link in the terminal that `npm run dev` was ran in to see the site on localhost.
+![link to app](/docs/link_image.png)
 
 ## Using the `.env` File
 
