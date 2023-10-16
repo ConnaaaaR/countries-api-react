@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Form = ({ fetchData, setCountry }) => {
+const Form = ({ fetchData, setCountry, loading }) => {
 	const clickHandler = (e) => {
 		e.preventDefault();
 		fetchData();
@@ -12,13 +12,18 @@ const Form = ({ fetchData, setCountry }) => {
 				<form className="search-form" onSubmit={clickHandler}>
 					<div className="input-container">
 						<input
+							aria-label="country"
 							className="search-form-text"
 							type="text"
 							autoComplete="false"
 							name="country"
 							onChange={(e) => setCountry(e.target.value)}
 						/>
-						<img className="input-icon" src="/enter-key.svg" />
+						{loading ? (
+							<div class="spinner"></div>
+						) : (
+							<img className="input-icon" src="/enter-key.svg" />
+						)}
 					</div>
 					<p className="under-text">
 						<img src="/bubble-ltr.svg" alt="" />

@@ -1,3 +1,5 @@
+/* This stylesheet contains classes and context specific styling, for element styling see index.css */
+
 @import url(./fonts.css);
 
 /* Variables */
@@ -15,6 +17,27 @@
 	padding: 2rem;
 	overflow: hidden;
 	text-align: center;
+}
+
+.spinner {
+	position: absolute;
+	top: 25%;
+	right: 10px;
+	transform: translateY(-50%);
+	border: 5px solid var(--Secondary);
+	border-radius: 50%;
+	border-top: 5px solid var(--Primary);
+	width: 14px;
+	aspect-ratio: 1;
+	animation: spin 1s linear infinite;
+}
+
+.map-pin {
+	margin: 1rem;
+}
+
+.error {
+	color: red;
 }
 
 /* Form Styles */
@@ -36,8 +59,8 @@
 	background-color: var(--Primary);
 	border: 1px solid var(--Secondary);
 	font-weight: 500;
+	width: 430px;
 	font-size: 1.5rem;
-	width: 100%;
 	color: var(--Secondary);
 	height: 2.5rem;
 	border-radius: 8px;
@@ -163,9 +186,13 @@
 }
 
 /* Media Queries */
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 800px) {
 	.search-form {
 		flex-direction: column;
+	}
+
+	.search-form-text {
+		width: 80vw;
 	}
 
 	.countrys-grid-container {
@@ -195,5 +222,14 @@
 
 	.box img {
 		max-width: 90%;
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

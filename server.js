@@ -25,7 +25,7 @@ app.get('/findCountry', async (req, res) => {
         // Check if the response from the external API is valid
         if (response.data && Array.isArray(response.data)) {
             
-            console.log(res.json(response.data));
+            res.json(response.data);
         } else {
             res.status(500).json({ error: 'Invalid data from the external API' });
         }
@@ -47,7 +47,7 @@ app.get('/findCountry', async (req, res) => {
         // Check if the response from the external API is valid
         if (response.data && Array.isArray(response.data)) {
             
-            console.log(res.json(response.data));
+            res.json(response.data);
         } else {
             res.status(500).json({ error: 'Invalid data from the external API' });
         }
