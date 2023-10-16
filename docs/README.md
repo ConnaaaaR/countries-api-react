@@ -2,6 +2,8 @@
 
 Discover information about countries around the world with this simple React application. Search for a country, view its details, and explore its flag. Check out the live project [here](https://countries-react-app-41e6305a2b31.herokuapp.com/)!
 
+![image of website](image.png)
+
 ## Features
 
 - **Search for Countries**: Simply type the name of a country and press enter.

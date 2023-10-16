@@ -20,7 +20,7 @@ const Form = ({ fetchData, setCountry, loading }) => {
 							onChange={(e) => setCountry(e.target.value)}
 						/>
 						{loading ? (
-							<div class="spinner"></div>
+							<div className="spinner"></div>
 						) : (
 							<img className="input-icon" src="/enter-key.svg" />
 						)}
