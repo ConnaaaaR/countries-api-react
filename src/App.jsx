@@ -23,6 +23,7 @@ function App() {
 			const countryData = await response.json();
 			setData(countryData);
 			setLoading(false);
+			setError(null);
 			navigate(`/`);
 		} catch (err) {
 			console.error(err);
