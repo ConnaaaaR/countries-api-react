@@ -1,15 +1,19 @@
 /* eslint-env node */
 const express = require('express');
-const axios = require('axios');
 const cors = require('cors');
-const path = require('path'); 
-
+const axios = require('axios');
+const path = require('path');
 const app = express();
 
-const PORT = process.env.PORT || 8000; 
+const PORT = process.env.PORT || 8000;
 
 app.use(cors());
 
+function randNum(len) {
+     
+    return Math.floor(Math.random() * len)
+            
+}
 
 app.get('/findCountry', async (req, res) => {
     const country = req.query.country;
@@ -21,10 +25,10 @@ app.get('/findCountry', async (req, res) => {
 
     try {
         const response = await axios.get(`https://restcountries.com/v3.1/name/${country}`);
-        
+
         // Check if the response from the external API is valid
         if (response.data && Array.isArray(response.data)) {
-            
+
             res.json(response.data);
         } else {
             res.status(500).json({ error: 'Invalid data from the external API' });
@@ -33,7 +37,9 @@ app.get('/findCountry', async (req, res) => {
         res.status(500).json({ error: error.response ? error.response.data : 'An error occurred while fetching country data' });
     }
 });
-  app.get('/countryFull', async (req, res) => {
+
+
+app.get('/countryFull', async (req, res) => {
     const country = req.query.country;
 
     // Validate the country input
@@ -43,10 +49,10 @@ app.get('/findCountry', async (req, res) => {
 
     try {
         const response = await axios.get(`https://restcountries.com/v3.1/name/${country}?fullText=true`);
-        
+
         // Check if the response from the external API is valid
         if (response.data && Array.isArray(response.data)) {
-            
+
             res.json(response.data);
         } else {
             res.status(500).json({ error: 'Invalid data from the external API' });
@@ -56,9 +62,19 @@ app.get('/findCountry', async (req, res) => {
     }
 });
 
-app.get('/api/config', (req,res) => {
-    res.json({port: PORT})
-})
+app.get('/randomCountry', async (req, res) => {
+    axios.get('https://restcountries.com/v3.1/all')
+        .then(response => {
+            res.send(response.data[randNum(response.data.length)]);
+        })
+        .catch(error => {
+            res.status(500).json({ error: error });
+        });
+});
+
+// app.get('/api/config', (req, res) => {
+//     res.json({ port: PORT });
+// });
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {

@@ -31,6 +31,34 @@
 	aspect-ratio: 1;
 	animation: spin 1s linear infinite;
 }
+.button-container {
+	margin-top: 1rem;
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.drop-down {
+	background-color: var(--Primary);
+	border: 2px solid var(--Secondary); /* Matches the logo's color */
+	border-radius: 5px;
+	color: #fff;
+	padding: 10px 20px;
+
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.drop-down:hover {
+	background-color: #333;
+}
+
+/* Dropdown arrow styling */
+.drop-down::-ms-expand {
+	display: none; /* Hide the default arrow in IE/Edge */
+}
 
 .map-pin {
 	margin: 1rem;
@@ -145,17 +173,14 @@
 	display: flex;
 	align-items: center;
 	gap: 4rem;
-	justify-content: center;
+	/* justify-content: center; */
 	flex-wrap: wrap;
-	/* background-color: var(--Secondary); */
 	color: var(--Secondary);
-
 	gap: 20px;
 	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	transition: transform 0.2s, box-shadow 0.2s;
-
 	margin: 3rem auto;
 }
 
@@ -170,8 +195,14 @@
 
 .flag-image {
 	height: auto;
+	justify-self: center;
 	margin: 10px auto;
+
 	object-fit: cover;
+}
+
+.weather-info {
+	justify-self: left;
 }
 
 /* Footer Styles */
@@ -206,7 +237,7 @@
 	.details-container {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+
 		flex-wrap: wrap;
 		background-color: var(--Secondary);
 		color: #1a1a1a;

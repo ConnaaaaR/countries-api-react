@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Form = ({ fetchData, setCountry, loading }) => {
+const Form = ({ fetchData, setCountry, country, loading }) => {
 	const clickHandler = (e) => {
 		e.preventDefault();
 		fetchData();
@@ -19,6 +19,7 @@ const Form = ({ fetchData, setCountry, loading }) => {
 							name="country"
 							onChange={(e) => setCountry(e.target.value)}
 						/>
+
 						{loading ? (
 							<div className="spinner"></div>
 						) : (
@@ -29,7 +30,6 @@ const Form = ({ fetchData, setCountry, loading }) => {
 						<img src="/bubble-ltr.svg" alt="" />
 						&nbsp;Type a country and press enter
 					</p>
-					{/* <button type="submit">Search Countries</button> */}
 				</form>
 			</div>
 		</>
@@ -39,6 +39,7 @@ const Form = ({ fetchData, setCountry, loading }) => {
 Form.propTypes = {
 	fetchData: PropTypes.func.isRequired,
 	setCountry: PropTypes.func.isRequired,
+	loading: PropTypes.bool.isRequired,
 };
 
 export default Form;

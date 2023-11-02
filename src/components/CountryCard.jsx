@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CountryCard = ({ data }) => {
 	return (
-		<Link to={`/country/${data.name.common}`}>
+		<Link key={data.ccn3} to={`/country/${data.name.common}`}>
 			<div className="box">
 				<img src={data.flags.png} alt={`Flag of ${data.name.common}`} />
 				<h3>{data.name.official}</h3>
@@ -15,6 +15,7 @@ const CountryCard = ({ data }) => {
 // define the prop types and shape for the data and its children
 CountryCard.propTypes = {
 	data: PropTypes.shape({
+		ccn3: PropTypes.string.isRequired,
 		name: PropTypes.shape({
 			common: PropTypes.string.isRequired,
 			official: PropTypes.string.isRequired,
