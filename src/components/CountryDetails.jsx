@@ -13,7 +13,7 @@ const CountryDetails = () => {
 		const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 		axios
-			.get(`${backendURL}countryFull?country=${countryName}`)
+			.get(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
 			.then((response) => {
 				if (!Array.isArray(response.data)) {
 					return console.error("unexpected data shape");
@@ -31,7 +31,9 @@ const CountryDetails = () => {
 		const weatherApiKey = import.meta.env.VITE_WEATHER_KEY;
 		axios
 			.get(
-				`https://api.openweathermap.org/data/2.5/weather?lat=${countryData.latlng[0].toFixed(2)}
+				`https://api.openweathermap.org/data/2.5/weather?lat=${countryData.latlng[0].toFixed(
+					2
+				)}
 				&lon=${countryData.latlng[1].toFixed(2)}&appid=${weatherApiKey}&units=metric`
 			)
 			.then((response) => {

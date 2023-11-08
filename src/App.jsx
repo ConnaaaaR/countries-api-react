@@ -28,9 +28,8 @@ function App() {
 	}, [data, regionFilter]);
 
 	async function fetchData() {
-		const backendURL = import.meta.env.VITE_BACKEND_URL;
 		axios
-			.get(`${backendURL}findCountry?country=${country}`)
+			.get(`https://restcountries.com/v3.1/name/${country}`)
 			.then((response) => {
 				navigate("/");
 				setData(null);

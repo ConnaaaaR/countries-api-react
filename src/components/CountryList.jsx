@@ -7,7 +7,6 @@ function CountryList({ data }) {
 
 	return (
 		<div className="countrys-grid-container">
-			{data ? console.log(data[0]) : ""}
 			{data &&
 				isArray &&
 				data.map((country) => (

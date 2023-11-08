@@ -6,36 +6,13 @@ const RandomCountryButton = ({ setData, setError, setLoading, setCountry }) => {
 	const navigate = useNavigate();
 
 	const fetchRandomCountry = async () => {
-		const backendURL = import.meta.env.VITE_BACKEND_URL;
-		// try {
-		// 	setLoading(true);
-		// 	setCountry(null);
-		// 	const response = await fetch(`${backendURL}randomCountry`);
-		// 	const countryData = await response.json();
-
-		// 	if (countryData.error && countryData.error.status === 404) {
-		// 		setError("Error: cannot find country");
-		// 	} else {
-		// 		setData(countryData);
-		// 		setCountry(countryData.name);
-		// 		navigate(`/country/${countryData.name.common}`);
-		// 		setError(null);
-		// 		setCountry("");
-		// 	}
-
-		// 	setLoading(false);
-		// } catch (err) {
-		// 	console.error(err);
-		// 	setError("Error Returning country, check console or try again.");
-		// 	setLoading(false);
-		// }
-
 		axios
-			.get(`${backendURL}randomCountry`)
+			.get(`https://restcountries.com/v3.1/all`)
 			.then((response) => {
+				let randNum = Math.floor(Math.random() * response.data.length);
 				setLoading(true);
 				setCountry(null);
-				const countryData = response.data;
+				const countryData = response.data[randNum];
 				if (countryData.error && countryData.error.status === 404) {
 					setError("Error: cannot find country");
 				} else {
