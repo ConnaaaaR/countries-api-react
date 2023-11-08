@@ -15,7 +15,6 @@ const CountryCard = ({ data }) => {
 // define the prop types and shape for the data and its children
 CountryCard.propTypes = {
 	data: PropTypes.shape({
-		ccn3: PropTypes.string.isRequired,
 		name: PropTypes.shape({
 			common: PropTypes.string.isRequired,
 			official: PropTypes.string.isRequired,

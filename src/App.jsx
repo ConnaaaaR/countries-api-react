@@ -15,7 +15,7 @@ import CountryList from "./components/CountryList";
 function App() {
 	let navigate = useNavigate();
 	const [data, setData] = useState(null);
-	const [country, setCountry] = useState(null);
+	const [country, setCountry] = useState("");
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [regionFilter, setRegionFilter] = useState("");
@@ -36,7 +36,6 @@ function App() {
 				setData(null);
 				setLoading(true);
 				let countryData = response.data;
-				console.log(countryData);
 
 				if (countryData.error && countryData.error.status === 404) {
 					setError("Error: cannot find country");

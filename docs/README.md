@@ -7,7 +7,9 @@ Discover information about countries around the world with this simple React app
 ## Features
 
 - **Search for Countries**: Simply type the name of a country and press enter.
+- **Search Filter**: Select a region from the dropdown to filter the search based on geographic region.
 - **Country Details**: Click on a country card to view more detailed information about the country.
+- **Random Country Details**: Click on the random country button to get information about a random country.
 - **Responsive Design**: Works on both desktop and mobile devices.
 
 ## Setup

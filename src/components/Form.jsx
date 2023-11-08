@@ -17,6 +17,7 @@ const Form = ({ fetchData, setCountry, country, loading }) => {
 							type="text"
 							autoComplete="false"
 							name="country"
+							value={country}
 							onChange={(e) => setCountry(e.target.value)}
 						/>
 
