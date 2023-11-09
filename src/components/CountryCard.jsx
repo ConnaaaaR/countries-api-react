@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const CountryCard = ({ data }) => {
+	if (!data || typeof data.name === "undefined") {
+		// Handle the lack of data appropriately, maybe show a loading indicator or a default state
+		return <div>Loading...</div>;
+	}
+
 	return (
 		<Link key={data.ccn3} to={`/country/${data.name.common}`}>
 			<div className="box">

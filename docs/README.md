@@ -1,6 +1,6 @@
 # WhatInTheWorld?!
 
-Discover information about countries around the world with this simple React application. Search for a country, view its details, and explore its flag. Check out the live project [here](https://countries-react-app-41e6305a2b31.herokuapp.com/)!
+Discover information about countries around the world with this simple React application. Search for a country, view its details, and explore its flag. Check out the live project [here](https://countries-rest-api-37e00.web.app)!
 
 ![image of website](/docs/app_screenshot.png)
 
@@ -8,9 +8,11 @@ Discover information about countries around the world with this simple React app
 
 - **Search for Countries**: Simply type the name of a country and press enter.
 - **Search Filter**: Select a region from the dropdown to filter the search based on geographic region.
-- **Country Details**: Click on a country card to view more detailed information about the country.
 - **Random Country Details**: Click on the random country button to get information about a random country.
+- **Country Details**: Click on a country card to view more detailed information about the country.
+- **Country Weather**: Weather for the country is displayed in the country details panel.
 - **Responsive Design**: Works on both desktop and mobile devices.
+- **Search Result Pagination**: Results from searching and filtering are paginated to inprove user experience.
 
 ## Setup
 
@@ -31,15 +33,14 @@ npm install
 
 3. **Setup Environment Variables**
 
-Copy the `.env.template` file provided in the frontend directory. Rename the copy file to `.env` or use the bash command provided to copy the file. Make sure to set the `VITE_BACKEND_URL` variable to your backend server URL. This is typically `http://localhost:8000/`.
+Copy the `.env.template` file provided in the frontend directory. Rename the copy file to `.env` or use the bash command provided to copy the file. Make sure to set the `VITE_WEATHER_KEY` variable to your OpenWeather API key. This is available from `https://openweathermap.org/current`.
 
-if changing the port be sure to include the trailing `/` in the url. 
 
 ```bash
-cp .env.example .env
+cp .env.template .env
 ```
 
-4. **Run the Application**
+1. **Run the Application**
 
 ```bash
 npm start
@@ -86,6 +87,6 @@ Command/CTRL-Click the link in the terminal that `npm run dev` was ran in to see
 
 ## Using the `.env` File
 
-The `.env` file contains the `VITE_BACKEND_URL`. This variable defines the server URL for the application. Without the correct setup of this variable the application will be unable to retrieve data from the API.
+The `.env` file contains the `VITE_WEATHER_KEY`. This variable defines the API key for the weather information within the application. Without the correct setup of this variable the application will be unable to retrieve data from the API.
 
 

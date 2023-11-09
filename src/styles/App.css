@@ -31,6 +31,17 @@
 	aspect-ratio: 1;
 	animation: spin 1s linear infinite;
 }
+
+.pagination button {
+	padding: 0.5rem 0.75rem;
+	margin: 0.3rem;
+	cursor: pointer;
+}
+
+.pagination button:hover {
+	background-color: #e2e6ea;
+}
+
 .button-container {
 	margin-top: 1rem;
 	display: flex;

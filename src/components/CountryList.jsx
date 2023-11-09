@@ -1,27 +1,40 @@
+import React, { useState, useEffect } from "react";
 import CountryCard from "./CountryCard";
-import PropTypes from "prop-types";
+import Pagination from "./Pagination";
+import "../styles/App.css";
 
-function CountryList({ data }) {
-	// Check if data is an array
-	const isArray = Array.isArray(data);
+const itemsPerPage = 10;
+
+const CountryList = ({ data }) => {
+	useEffect(() => {
+		setCurrentPage(1);
+	}, [data]);
+
+	const [currentPage, setCurrentPage] = useState(1);
+	if (!data) return null; // Early return for null data
+
+	// Calculate total number of pages
+	const pageCount = Math.ceil(data.length / itemsPerPage);
+
+	const indexOfLastItem = currentPage * itemsPerPage;
+	const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+	const currentCountries = data.slice(indexOfFirstItem, indexOfLastItem);
 
 	return (
-		<div className="countrys-grid-container">
-			{data &&
-				isArray &&
-				data.map((country) => (
+		<>
+			<div className="countrys-grid-container">
+				{currentCountries.map((country) => (
 					<CountryCard key={country.ccn3} data={country} />
 				))}
-			{data && !isArray && <CountryCard key={data.ccn3} data={data} />}
-		</div>
-	);
-}
+			</div>
 
-CountryList.propTypes = {
-	data: PropTypes.oneOfType([
-		PropTypes.arrayOf(PropTypes.object),
-		PropTypes.object,
-	]),
+			<Pagination
+				currentPage={currentPage}
+				setPage={setCurrentPage}
+				totalPages={pageCount}
+			/>
+		</>
+	);
 };
 
 export default CountryList;
