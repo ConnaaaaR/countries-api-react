@@ -10,8 +10,6 @@ const CountryDetails = () => {
 
 	// fetches detailed country data from api
 	async function fetchCountryDetails() {
-		const backendURL = import.meta.env.VITE_BACKEND_URL;
-
 		axios
 			.get(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
 			.then((response) => {
